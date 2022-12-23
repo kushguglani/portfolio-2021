@@ -148,7 +148,7 @@ export default [
   //       `,
   // },
   {
-    name: 'kushg.tech',
+    name: 'guglani.tech',
     position: 'Web Developer (React)',
     type: 'react',
     link: 'https://github.com/kushguglani/portfolio_mern_pwa',

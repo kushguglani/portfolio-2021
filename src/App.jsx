@@ -35,11 +35,15 @@ const ExperienceSection = Loadable({
   loading: Loading,
 });
 
-// const ParticleBg = Loadable({
-//   loader: () => import(/* webpackChunkName: "ParticleBg" */ './ParticleBg'),
-//   loading: Loading,
-// });
+const ParticleBg = Loadable({
+  loader: () => import(/* webpackChunkName: "ParticleBg" */ './ParticleBg'),
+  loading: Loading,
+});
 
+const CertificateSection = Loadable({
+  loader: () => import(/* webpackChunkName: "ProjectSection" */ './sections/CertificateSection'),
+  loading: Loading,
+});
 
 export default class App extends Component {
   constructor(props) {
@@ -47,18 +51,32 @@ export default class App extends Component {
 
     this.state = {
       introText: `
-        I am an Engineer with 5 years of IT experience. I primarily work with JavaScript(ES6) & React and have hands-on experience with Node.JS, Microfrontends, Microservices and  CI/CD.
+      A self-learner crazy enthusiast Engineer with 7 years of experience.
       `,
-
+      introText2: `I build web apps and code beautifully simple things.`,
+      introText3: `My personal interest in the fields of front end,
+      AWS cloud and data visualization have to lead me to complete several courses,
+       client project and personal POC projects in the domain of Ecommerce, Banking,
+        Cloud, Aerospace, Medical, API Post-box, Automobiles,
+         Data Science and Analytics, Reports, Live Classes etc.`,
       lastUpdated: null,
+      showResponsive:''
     };
     window.addEventListener('load', this.callbackFunc);
     window.addEventListener('scroll', this.callbackFunc);
   }
 
+  setResponsive =()=>{
+    this.state.showResponsive===""?
+    this.setState({
+      showResponsive:'responsive'
+    }):this.setState({
+      showResponsive:''
+    })
+  }
 
   componentDidMount() {
-    fetch('https://api.github.com/repos/kushguglani/myportfolio').then(
+    fetch('https://api.github.com/repos/kushguglani/mern-portfolio-2021').then(
       resp => resp.json(),
     ).then((response) => {
       const lastUpdated = response.updated_at;
@@ -121,14 +139,16 @@ export default class App extends Component {
   render() {
     const {
       introText,
+      introText2,
       lastUpdated,
+      showResponsive
     } = this.state;
 
     return (
       <div className="application">
         <Helmet>
           <title>Kush Guglani</title>
-          <meta name="author" content="Kush Guglani kushg.tech" />
+          <meta name="author" content="Kush Guglani guglani.tech" />
           <meta name="Description" content="I'm a Bengaluru (India) based React.JS, React Native developer, PHP & Angular Developer, Python, Android Developer and Ionic Developer." />
           <meta name="Keywords" content="developer, react, software developer, fullstack, backend, react native, android, frontend, india, bengaluru, Python, react.js, node.js, Software engineer" />
           <meta name="description" content="Kush Guglani Portfolio Tech" />
@@ -136,26 +156,25 @@ export default class App extends Component {
         <div className="content">
 
           <div className="header-wrap" role="main" aria-label=" Kush Guglani introduction.">
-            <HeaderBar />
+            <HeaderBar showResponsive={showResponsive} setResponsive={this.setResponsive}/>
             <div className="heading--title">
               <h1 className="main--heading">
 
 
                 Kush Guglani
-            </h1>
+              </h1>
               <h2 className="sub--heading">
 
 
                 <Typed
-                  strings={['Software Engineer', 'Full Stack Developer', 'Free Lancer']}
+                  strings={['Memeber of Technical Staff','Software Engineer', 'Full Stack Developer', 'Free Lancer']}
                   typeSpeed={40}
-                  backSpeed={50}
                   loop
                 />
               </h2>
 
               <div className="description">
-                {introText}
+                {introText}<br/>{introText2}
                 <p
                   style={{
                     marginTop: '3em',
@@ -166,41 +185,48 @@ export default class App extends Component {
                   className="download_cv"
                   onClick="ga('send', 'event', 'Download', 'resume', 'version 1');"
                 > */}
-                  <a
+                  {/* <a
                     href="/resume_new"
                     className="download_cv"
                   >
-
-
                     Download Resume
-                </a>
+                  </a> */}
                 </p>
               </div>
             </div>
-            {
+            {/* {
               lastUpdated
               && (
                 <span className="last--updated">
 
 
-                  Last Updated at:
+                  Last Updated at :
                   {' '}
                   {lastUpdated || ''}
                 </span>
               )
-            }
+            } */}
           </div>
 
           <ExperienceSection />
 
           <SkillCardSection />
 
-          <ProjectSection />
+          {/* <ProjectSection /> */}
 
-          <EducationSection />
+          {/* <EducationSection /> */}
+
+          {/* <CertificateSection /> */}
 
           <AboutSection />
+
+          <ParticleBg />
+
+
+          {/* <ContactUs /> */}
+
           <Footer />
+
         </div>
 
       </div>

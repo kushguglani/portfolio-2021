@@ -1,0 +1,10 @@
+Run docker daemon
+docker build -t kushguglani5/my-portfolio .
+or
+docker compose up
+
+clean up any resources — images, containers, volumes, and networks 
+docker system prune -a
+
+
+docker build . -t name

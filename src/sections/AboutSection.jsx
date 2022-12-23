@@ -10,69 +10,82 @@ const AboutSection = () => (
 
     <div className="personal-info--content">
       <div>
-        <span>
-
-          Full Name
+        <span className='i-like'>
+          I <i className="fas fa-heart" />
         </span>
-
-        Kush Guglani
-      </div>
-
-      <div>
-        <span className="email">
-          <i className="fas fa-at" />
-        </span>
-        <a
-          href="mailto:kushg.tech@gmail.com?"
-          className="about-links"
-        >
-
-          kushg.tech@gmail.com
-        </a>
-      </div>
-
-      <div>
-        <span className="phone">
-          <i className="fas fa-phone" />
-        </span>
-
-        +91 - 8909555321
-        <br />
-      </div>
-
-      <div>
-        <span className="address">
-          <i className="fas fa-futbol" />
-        </span>
-        <ul className="hobby--list" aria-label="Hobbies">
+        <ul>
           <li>
-
-            Travelling
+            In my spare time, you will find me teaching, reading books, playing games, contributing to community.
           </li>
-          <li>
-
-            Playing Computer Games
+          <li>I occasionally cooking especially with friends and family.
           </li>
-          <li>
-
-            Photography
+          <li>I get my mood boost from the intense experiences of horror movies
           </li>
-          <li>
-
-            Watching Horror Movies
-          </li>
-          <li>
-
-            Playing Cricket
-          </li>
-          <li>
-
-            Listening to Music
+          <li>Travelling, exploring lands and capturing moments are always my favorite break from work.
           </li>
         </ul>
-      </div>
     </div>
-  </section>
+
+    <div>
+      <span className="email">
+        <i className="fas fa-at" />
+      </span>
+      <a
+        href="mailto:guglani.tech@gmail.com?"
+        className="about-links"
+      >
+
+        guglani.tech@gmail.com
+      </a>
+    </div>
+
+    <div>
+      <span className="phone">
+        <i className="fas fa-graduation-cap" />
+      </span>
+
+      Bachelor of Technology - IT (2012-2016)
+      <br />
+    </div>
+
+    {/* <div>
+      <span className="address">
+        <i className="fas fa-futbol" />
+      </span>
+      <ul className="hobby--list" aria-label="Hobbies">
+        <li>
+
+          Exploring distant lands
+        </li>
+        <li>
+
+          Blogging, reading and writing
+
+        </li>
+        <li>
+
+          Playing Games
+        </li>
+        <li>
+
+          Capturing moments
+        </li>
+        <li>
+
+          Watching Horror Movies
+        </li>
+        <li>
+
+          Teaching
+        </li>
+        <li>
+
+          Music Lover
+        </li>
+      </ul>
+    </div> */}
+  </div>
+  </section >
 );
 
 export default AboutSection;

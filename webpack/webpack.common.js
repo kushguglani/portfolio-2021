@@ -8,13 +8,14 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 const projectRoot = path.resolve(__dirname, '..');
+const projectStore = path.resolve('./src/build');
 
 module.exports = {
   context: path.resolve(projectRoot, 'src'),
   entry: './index.jsx',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(projectRoot),
+    path: path.resolve(projectStore),
     chunkFilename: './assets/js/[name].js',
   },
   resolve: {

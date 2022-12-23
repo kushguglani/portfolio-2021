@@ -10,7 +10,7 @@ const SkillCard = Loadable({
 });
 
 const {
-  frontEndSkills, backEndSkills, programmingSkills,
+  frontEndSkills, backEndSkills, programmingSkills,mobileSkills,cloudCicd,dbSkills
 } = Skills;
 
 const SkillCardSection = () => (
@@ -64,7 +64,7 @@ const SkillCardSection = () => (
       </div>
       <div className="item">
         <h2 className="heading">
-
+{/* 
           Programming
         </h2>
         <br />
@@ -82,10 +82,10 @@ const SkillCardSection = () => (
           ))}
         </div>
       </div>
-      {/* <div className="item">
-        <h2 className="heading">
+      <div className="item">
+        <h2 className="heading"> */}
 
-          Mobile
+          {/* Mobile
         </h2>
         <br />
         <div className="row">
@@ -101,7 +101,27 @@ const SkillCardSection = () => (
               />
             ))}
         </div>
-      </div> */}
+      </div>
+      <div className="item">
+        <h2 className="heading"> */}
+
+        Cloud / CICD
+        </h2>
+        <br />
+        <div className="row">
+          {cloudCicd.map(({
+            name, percent, color, type,
+          }) => (
+              <SkillCard
+                type={type}
+                key={name}
+                percent={percent}
+                name={name}
+                color={color}
+              />
+            ))}
+        </div>
+      </div>
     </div>
     <br />
     <br />
